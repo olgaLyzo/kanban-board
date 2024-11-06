@@ -1,0 +1,35 @@
+.card{
+	position: relative;
+	display: block;
+	background-color: white;
+	box-shadow: 0px 3px rgba(185, 183, 183, 0.25);
+	margin-bottom: 1px;
+	min-height: 58px;
+	padding: 12px;
+	border-radius: 9px;
+	cursor: pointer;
+
+	&:not(:first-of-type){
+		margin-top: 8px;
+	}
+
+	&:hover{
+		.button-remove {
+			display: flex;
+		}
+	}
+
+	.name{
+		overflow-wrap: break-word;
+		white-space: normal;
+	}
+	.button-remove {
+		display: none;
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		padding: 4px;
+		right: 6px;
+		top: 6px;
+	}
+}

@@ -1,0 +1,11 @@
+.button {
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	border-radius: 4px;
+
+	&:hover {
+		background-color: #eaeaea;
+	}
+}

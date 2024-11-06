@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 
+		sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+	--header-height: 48px;
+	--footer-height: 56px;
+}
+
+*{
+	box-sizing: border-box;
+	
+}
+
+
