@@ -5,7 +5,7 @@ import { Layout } from "./components/layout/Layout";
 import { Board } from "./components/board/Board";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Card } from "./components/board/card/Card";
-import './App.scss';
+
 
 const router = createBrowserRouter([
 	{

@@ -13,19 +13,15 @@ export const Column = (props)=>{
 	const [isAddingTask, setAddingTask] = useState(false);
 	const {mainContentHeight} = useLayout();
 	const {getTasksByState, getTasksByExcludedState, addTask, removeTask, moveTask} = useTasks();
-	
-	
-
 	const tasks = getTasksByState(props.state);
-	
 	const onChangeInput = (e)=>{
 		setInputValue(e.target.value)
 	}
 
 	return (	
 		<div className = {css.column}>
-			<h2 className={css.column_title}>{props.name}</h2>
-			<div className={css.wrapper}>
+			<div className={css.title}>{props.name}</div>
+			<div className={css.content_wrapper}>
 				<div className={css.body}>
 					{
 						tasks.length > 0 && 
@@ -71,7 +67,7 @@ export const Column = (props)=>{
 				</div>
 				<div className={`${css.footer} ${isAddingTask ? css.active : ""}`}> 
 					{
-						(!isInputShown && !isSelectShown)
+						(!isInputShown || !isSelectShown)
 							&& (
 									<button 
 										className={css.button_add}
@@ -85,7 +81,7 @@ export const Column = (props)=>{
 											}
 											setAddingTask(true);
 										}}
-									> Add task
+									> + Add card
 									</button>
 							)
 					}
@@ -105,17 +101,13 @@ export const Column = (props)=>{
 												}else{
 													alert('Task already exists')
                           setInputValue('');
-													setAddingTask(false); 
+													setInputShown(false);
 												}
-												
 											}else{
 												setSelectShown(false);
-												// console.log('2', selectedTask);
 												moveTask(selectedTask, props.state)
 											} 
-											// setAddingTask(true);
 											setAddingTask(false);
-											// console.log('tasks:', tasks)
 										}
 									}
 									>Submit

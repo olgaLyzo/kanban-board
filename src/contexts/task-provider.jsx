@@ -5,13 +5,12 @@ export const TaskProvider = (props)=>{
 	
 	const [tasks, setTasks] = useState([]);
 	const [isLoaded, setLoaded] = useState(false);
-	const [idCounter, setIdCounter] = useState(0);
 	
 	const [states] = useState([
-		  {id: 1, name: 'backlog', state: 'backlog'},
-      {id: 2, name: 'ready', state: 'ready'},
-      {id: 3, name: 'in progress', state: 'inProgress'},
-			{id: 4, name: 'finished', state: 'finished'},
+		  {id: 1, name: 'Backlog', state: 'backlog'},
+      {id: 2, name: 'Ready', state: 'ready'},
+      {id: 3, name: 'In progress', state: 'inProgress'},
+			{id: 4, name: 'Finished', state: 'finished'},
   ]);
 
 	const findTaskById = (id) => tasks.find(task => task.id === parseInt(id));
@@ -33,17 +32,12 @@ export const TaskProvider = (props)=>{
 	const context = {
 		states,
 		addTask: (name)=>{
-			console.log('idCounter', idCounter);
-			const id = idCounter + 1;
-			console.log('id', id);
-			
+			const id = (new Date()).getTime();
 		  const task = {
 				id, 
 				name, 
 				state: 'backlog'
 			};
-			console.log('task', task)
-			setIdCounter(id);
 			setTasks([...tasks, task]);
 		},
 		updateTask: (item)=>{

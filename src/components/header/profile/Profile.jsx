@@ -16,6 +16,7 @@ export const Profile = ()=>{
       </div>
       {isMenuShown && (
         <div className={css.menu}>
+					<div className={css.arrow_up}></div>
           <div className={css.menuItem}>
             Profile
           </div>

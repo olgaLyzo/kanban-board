@@ -2,7 +2,6 @@
   display: flex;
   position: relative;
   align-items: center;
-  cursor: pointer;
   user-select: none;
 
 	.avatar{
@@ -18,18 +17,28 @@
 
   .menu {
     position: fixed;
-    top: 48px;
+    top: 60px;
     right: 16px;
-    min-width: 120px;
+    min-width: 138px;
     background-color: #ffffff;
     color: #000000;
     border-radius: 4px;
-    padding: 8px 12px;
+    padding: 5px;
+		z-index: 2;
   }
+	.arrow_up {
+		position: absolute;
+		top: -20px;
+		right: 34px;
+		border-top: 10px solid transparent;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #FFFFFF;
+	}
 	.menuItem{
 		margin-bottom: 8px;
+		padding: 0 7px;
     &:hover{
-			cursor: pointer;
 			background-color: rgb(231, 230, 230);
 			border-radius: 4px;
 		}
